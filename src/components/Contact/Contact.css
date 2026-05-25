@@ -1,0 +1,161 @@
+.contact {
+  padding: var(--section-pad);
+
+  .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .left {
+    padding-top: 8px;
+  }
+
+  .copy {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 360px;
+  }
+
+  .socials {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .social {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-muted);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--purple);
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+  }
+
+  .input,
+  .textarea {
+    background: var(--bg-card);
+    border: 1px solid var(--purple-border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    color: var(--text);
+    font-family: "Roboto", sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition:
+      border-color 0.25s ease,
+      background 0.25s ease;
+    resize: none;
+
+    &:focus {
+      border-color: var(--purple);
+      background: var(--purple-dim);
+    }
+
+    &::placeholder {
+      color: var(--text-muted);
+      opacity: 0.5;
+    }
+  }
+
+  .submit {
+    align-self: flex-start;
+    padding: 14px 32px;
+    background: var(--purple);
+    color: var(--bg);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: var(--radius);
+    transition:
+      background 0.25s ease,
+      transform 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background: var(--mango);
+      transform: translateY(-2px);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+    }
+  }
+
+  .successMessage {
+    font-size: 0.875rem;
+    color: #6ee7b7;
+  }
+
+  .errorMessage {
+    font-size: 0.875rem;
+    color: #fca5a5;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact {
+    .layout {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    .copy {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .contact {
+    .copy {
+      text-align: center;
+    }
+
+    .socials {
+      align-items: center;
+    }
+
+    .submit {
+      align-self: stretch;
+    }
+  }
+}

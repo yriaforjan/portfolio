@@ -1,0 +1,11 @@
+.bgImage {
+  position: fixed;
+  inset: 0;
+  background-image: url("/images/bg_dark.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.09;
+  pointer-events: none;
+  z-index: -1;
+}

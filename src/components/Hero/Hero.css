@@ -1,0 +1,248 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 36px;
+  padding: var(--section-pad);
+  padding-top: calc(clamp(80px, 10vw, 120px) + 40px);
+  overflow: hidden;
+
+  .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  /* ── Code block ────────────────────────────────── */
+  .codeBlock {
+    width: clamp(340px, 55vw, 640px);
+    background: var(--bg-card);
+    border: 1px solid var(--purple-border);
+    border-radius: 14px;
+    overflow: hidden;
+    font-family: "Courier New", "Menlo", monospace;
+    font-size: clamp(0.9rem, 1.1vw, 0.84rem);
+    line-height: 1.7;
+  }
+
+  .codeHeader {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--purple-border);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.7;
+  }
+
+  .fileName {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-left: 8px;
+    opacity: 0.7;
+  }
+
+  .codeBody {
+    padding: 14px 16px;
+  }
+
+  .codeLine {
+    display: flex;
+    gap: 12px;
+    white-space: pre;
+  }
+
+  .lineNum {
+    color: var(--text-muted);
+    opacity: 0.35;
+    user-select: none;
+    font-size: 0.9em;
+    flex-shrink: 0;
+    line-height: inherit;
+    padding-top: 2px;
+  }
+
+  /* Syntax tokens */
+  .tok_keyword {
+    color: var(--purple);
+  }
+
+  .tok_type {
+    color: #c792ea;
+  }
+
+  .tok_prop {
+    color: #7ec8e3;
+  }
+
+  .tok_string {
+    color: var(--mango);
+  }
+
+  .tok_bool {
+    color: #a8d8a8;
+  }
+
+  .tok_plain {
+    color: var(--text-muted);
+  }
+
+  /* Blinking cursor */
+  .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background: var(--mango);
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+  }
+
+  /* ── CTA buttons ───────────────────────────────── */
+  .ctaGroup {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .ctaButton {
+    display: inline-flex;
+    align-items: baseline;
+    padding: 11px 22px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-family: "Courier New", "Menlo", monospace;
+    font-size: clamp(0.78rem, 1.2vw, 0.88rem);
+    background: transparent;
+    transition:
+      border-color 0.22s ease,
+      background 0.22s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.06);
+    }
+  }
+
+  .ctaObject {
+    color: var(--text-muted);
+  }
+
+  .ctaMethod {
+    color: var(--mango);
+    font-weight: 600;
+  }
+
+  .ctaMethodSecondary {
+    color: var(--purple);
+    font-weight: 600;
+  }
+
+  .ctaPunctuation {
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+
+  /* ── Skills strip ──────────────────────────────── */
+  .skillsSection {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: clamp(12px, 2vw, 24px);
+
+    .section-title {
+      margin-bottom: 24px;
+    }
+  }
+
+  /* ── Scroll hint ───────────────────────────────── */
+  .scrollHint {
+    position: absolute;
+    right: clamp(24px, 6vw, 80px);
+    bottom: clamp(32px, 5vw, 60px);
+
+    span {
+      display: block;
+      width: 1px;
+      height: 70px;
+      background: linear-gradient(to bottom, var(--purple-border), transparent);
+      animation: drop 2.4s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes drop {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+  }
+  40% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+  60% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    gap: 28px;
+
+    .codeBlock {
+      width: 100%;
+      max-width: 560px;
+    }
+
+    .scrollHint {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    .codeLine {
+      white-space: pre-wrap;
+      word-break: break-word;
+      align-items: flex-start;
+    }
+
+    .lineNum {
+      font-size: 0.6em;
+    }
+  }
+}

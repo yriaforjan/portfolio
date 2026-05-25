@@ -1,0 +1,135 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px clamp(24px, 6vw, 80px);
+  transition:
+    background 0.4s ease,
+    border-color 0.4s ease,
+    padding 0.4s ease;
+
+  &.scrolled {
+    background: rgba(7, 7, 7, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 14px clamp(24px, 6vw, 80px);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logoImage {
+    height: 40px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+  }
+
+  .logo:hover .logoImage {
+    opacity: 1;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .link {
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    padding: 4px 0;
+    transition: color 0.25s ease;
+
+    &:hover,
+    &.active {
+      color: var(--text);
+    }
+  }
+
+  .underline {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--mango);
+    transition: width 0.3s var(--ease-out);
+  }
+
+  .link:hover .underline,
+  .link.active .underline {
+    width: 100%;
+  }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    padding: 4px;
+  }
+
+  .burgerLine {
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--text);
+    transition: transform 0.3s var(--ease-out);
+  }
+
+  .burger.open .burgerLine:nth-child(1) {
+    transform: translateY(3.5px) rotate(45deg);
+  }
+
+  .burger.open .burgerLine:nth-child(2) {
+    transform: translateY(-3.5px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .header .burger {
+    display: flex;
+  }
+
+  .header .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(200px, 65vw);
+    height: 100vh;
+    background: rgba(7, 7, 7, 0.88);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-left: 1px solid rgba(156, 127, 215, 0.12);
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    padding: 40px 32px;
+    transition: right 0.35s var(--ease-out);
+
+    &.open {
+      right: 0;
+    }
+  }
+
+  .header .link {
+    font-size: 1rem;
+  }
+}

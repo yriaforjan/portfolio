@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts: async load to avoid render blocking -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Preload LCP images -->
+    <link rel="preload" as="image" href="/images/logo.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/avatar.webp" fetchpriority="high" />
+
+    <!-- SEO -->
+    <title>Yria Forján | Full Stack Developer</title>
+    <meta name="description" content="Full Stack Developer especializada en React, Vue, TypeScript y Spring Boot. Construyo productos digitales rápidos, cuidados e intuitivos." />
+    <meta name="keywords" content="full stack developer, frontend developer, React, Vue, TypeScript, Node.js, Spring Boot, desarrolladora web" />
+    <meta name="author" content="Yria Forján" />
+    <link rel="canonical" href="https://yriaforjan.dev/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content="Yria Forján | Full Stack Developer" />
+    <meta property="og:description" content="Full Stack Developer especializada en React, Vue, TypeScript y Spring Boot. Construyo productos digitales rápidos, cuidados e intuitivos." />
+    <meta property="og:url" content="https://yriaforjan.dev/" />
+    <meta property="og:image" content="https://yriaforjan.dev/images/og-image.webp" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Yria Forján | Full Stack Developer" />
+    <meta name="twitter:description" content="Full Stack Developer especializada en React, Vue, TypeScript y Spring Boot." />
+    <meta name="twitter:image" content="https://yriaforjan.dev/images/og-image.webp" />
+
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="dEIb1iP6kYCLaJmDXairfIBsXctql2BN128hk7wbYvM" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

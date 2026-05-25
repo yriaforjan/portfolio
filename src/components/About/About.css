@@ -1,0 +1,198 @@
+.about {
+  padding: var(--section-pad);
+
+  .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "left    photo"
+      "interests photo";
+    column-gap: 80px;
+    align-items: start;
+  }
+
+  .left {
+    grid-area: left;
+  }
+
+  /* ── Left column ── */
+  .left .section-title {
+    margin-bottom: 60px;
+  }
+
+  .text {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    max-width: 600px;
+  }
+
+  /* ── Amo / Odio ── */
+  .interestsBlock {
+    grid-area: interests;
+    margin-top: 72px;
+    margin-left: auto;
+    max-width: 360px;
+    text-align: center;
+  }
+
+  .toggleButton {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 60px !important;
+    transition: opacity 0.15s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .itemList {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: fit-content;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .itemIcon {
+    font-size: 1.4rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .itemLabel {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  /* ── Photo ── */
+  .photoWrapper {
+    grid-area: photo;
+    width: 300px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-top: 80px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 20%;
+      background: linear-gradient(to bottom, transparent, var(--bg));
+      pointer-events: none;
+    }
+  }
+
+  .photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+/* ── Tablet ── */
+@media (max-width: 900px) {
+  .about {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "left left"
+        "interests photo";
+      column-gap: 40px;
+      row-gap: 48px;
+    }
+
+    .left .section-title {
+      margin-bottom: 24px;
+    }
+
+    .text {
+      max-width: 100%;
+    }
+
+    .interestsBlock {
+      margin-top: 0;
+      margin-left: 0;
+      max-width: 100%;
+      text-align: left;
+    }
+
+    .toggleButton {
+      text-align: left;
+    }
+
+    .itemList {
+      margin: 0;
+    }
+
+    .photoWrapper {
+      width: 100%;
+      max-width: 240px;
+      margin-top: 0;
+      margin-left: auto;
+    }
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 580px) {
+  .about {
+    .grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "left"
+        "photo"
+        "interests";
+      row-gap: 36px;
+    }
+
+    .text {
+      text-align: center;
+    }
+
+    .photoWrapper {
+      width: 160px;
+      margin: 0 auto;
+      max-width: unset;
+    }
+
+    .interestsBlock {
+      margin-left: 0;
+      text-align: left;
+    }
+
+    .toggleButton {
+      text-align: center;
+    }
+
+    .itemList {
+      margin: 0;
+    }
+  }
+}
