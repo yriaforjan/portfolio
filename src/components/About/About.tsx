@@ -39,6 +39,7 @@ export default function About() {
             >
               {tab === "love" ? "Amo" : "Odio"}
             </button>
+            <div className="listWrapper">
             <AnimatePresence mode="wait">
               <motion.ul
                 key={tab}
@@ -56,6 +57,7 @@ export default function About() {
                 ))}
               </motion.ul>
             </AnimatePresence>
+            </div>
           </div>
 
           <div className="photoWrapper">

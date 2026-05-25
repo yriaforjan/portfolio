@@ -34,11 +34,17 @@
   }
 
   /* ── Amo / Odio ── */
+  .listWrapper {
+    min-height: 200px;
+    position: relative;
+    width: 100%;
+  }
+
   .interestsBlock {
     grid-area: interests;
     margin-top: 72px;
     margin-left: auto;
-    max-width: 360px;
+    width: 360px;
     text-align: center;
   }
 
