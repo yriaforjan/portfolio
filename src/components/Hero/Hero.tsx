@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 import { skills } from "../../data/data";
 import { useHero } from "../../context/HeroContext";
 import "./Hero.css";
@@ -96,16 +95,7 @@ function CodeBlock({ onDone }: { onDone: () => void }) {
   }, [revealed, done, onDone]);
 
   return (
-    <motion.div
-      className="codeBlock"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.7,
-        delay: 0.2,
-        ease: [0.16, 1, 0.3, 1] as const,
-      }}
-    >
+    <div className="codeBlock">
       <div className="codeHeader">
         <span className="dot" style={{ background: "#ff5f57" }} />
         <span className="dot" style={{ background: "#febc2e" }} />
@@ -115,13 +105,13 @@ function CodeBlock({ onDone }: { onDone: () => void }) {
       <div className="codeBody">
         {CODE.slice(0, revealed).map((line, i) => (
           <div key={i} className="codeLine">
-            <span className="lineNum" aria-hidden="true">{String(i + 1).padStart(2, " ")}</span>
+            <span className="lineNum">{String(i + 1).padStart(2, " ")}</span>
             <CodeLine text={line} />
           </div>
         ))}
         {!done && <span className="cursor" />}
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -166,13 +156,15 @@ function SkillsStrip() {
     const el = trackRef.current;
     if (!el) return;
 
-    const half = () => el.scrollWidth / 2;
+    const halfWidth = el.scrollWidth / 2;
+    let pos = 0;
 
     let raf: number;
     const tick = () => {
       if (!dragging.current) {
-        el.scrollLeft += 1;
-        if (el.scrollLeft >= half()) el.scrollLeft -= half();
+        pos += 1;
+        if (pos >= halfWidth) pos -= halfWidth;
+        el.scrollLeft = pos;
       }
       raf = requestAnimationFrame(tick);
     };
@@ -181,14 +173,15 @@ function SkillsStrip() {
     const onDown = (e: PointerEvent) => {
       dragging.current = true;
       startX.current = e.clientX;
-      startScroll.current = el.scrollLeft;
+      startScroll.current = pos;
       el.setPointerCapture(e.pointerId);
     };
     const onMove = (e: PointerEvent) => {
       if (!dragging.current) return;
-      el.scrollLeft = startScroll.current + (startX.current - e.clientX);
-      if (el.scrollLeft >= half()) el.scrollLeft -= half();
-      if (el.scrollLeft < 0) el.scrollLeft += half();
+      pos = startScroll.current + (startX.current - e.clientX);
+      if (pos >= halfWidth) pos -= halfWidth;
+      if (pos < 0) pos += halfWidth;
+      el.scrollLeft = pos;
     };
     const onUp = () => {
       dragging.current = false;
@@ -239,29 +232,16 @@ export default function Hero() {
     <section className="hero">
       <div className="inner">
         <CodeBlock onDone={setReady} />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: ready ? 1 : 0 }}
-          transition={{ duration: 0.9, ease: "easeInOut" }}
-        >
+        <div className={`heroReveal${ready ? " visible" : ""}`}>
           <CtaButtons />
-        </motion.div>
+        </div>
       </div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: ready ? 1 : 0 }}
-        transition={{ duration: 0.9, ease: "easeInOut" }}
-      >
+      <div className={`heroReveal${ready ? " visible" : ""}`}>
         <SkillsStrip />
-      </motion.div>
-      <motion.div
-        className="scrollHint"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: ready ? 1 : 0 }}
-        transition={{ duration: 0.9, ease: "easeInOut" }}
-      >
+      </div>
+      <div className={`scrollHint heroReveal${ready ? " visible" : ""}`}>
         <span />
-      </motion.div>
+      </div>
     </section>
   );
 }
