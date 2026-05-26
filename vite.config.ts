@@ -22,10 +22,6 @@ function cssBeforeJs(): Plugin {
 export default defineConfig({
   plugins: [react(), cssBeforeJs()],
   build: {
-    modulePreload: {
-      resolveDependencies: (_filename, deps) =>
-        deps.filter((dep) => !dep.includes("vendor-motion")),
-    },
     rollupOptions: {
       output: {
         manualChunks(id) {
