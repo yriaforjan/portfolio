@@ -146,13 +146,14 @@ function CtaButtons() {
   );
 }
 
-function SkillsStrip() {
+function SkillsStrip({ active }: { active: boolean }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
   const startX = useRef(0);
   const startScroll = useRef(0);
 
   useEffect(() => {
+    if (!active) return;
     const el = trackRef.current;
     if (!el) return;
 
@@ -199,7 +200,7 @@ function SkillsStrip() {
       el.removeEventListener("pointerup", onUp);
       el.removeEventListener("pointercancel", onUp);
     };
-  }, []);
+  }, [active]);
 
   return (
     <div className="skillsSection">
@@ -237,7 +238,7 @@ export default function Hero() {
         </div>
       </div>
       <div className={`heroReveal${ready ? " visible" : ""}`}>
-        <SkillsStrip />
+        <SkillsStrip active={ready} />
       </div>
       <div className={`scrollHint heroReveal${ready ? " visible" : ""}`}>
         <span />
