@@ -65,6 +65,8 @@ export default function About() {
               src="/images/avatar.webp"
               alt="Yria Forján"
               className="photo"
+              width={600}
+              height={783}
             />
           </div>
         </div>

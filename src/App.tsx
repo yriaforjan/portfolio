@@ -1,13 +1,15 @@
+import { lazy, Suspense } from "react";
 import Cursor from "./components/Cursor/Cursor";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
-import About from "./components/About/About";
-import Timeline from "./components/Timeline/Timeline";
-import Projects from "./components/Projects/Projects";
-import Contact from "./components/Contact/Contact";
-import Footer from "./components/Footer/Footer";
 import { HeroProvider } from "./context/HeroContext";
 import "./App.css";
+
+const Projects = lazy(() => import("./components/Projects/Projects"));
+const Timeline = lazy(() => import("./components/Timeline/Timeline"));
+const About = lazy(() => import("./components/About/About"));
+const Contact = lazy(() => import("./components/Contact/Contact"));
+const Footer = lazy(() => import("./components/Footer/Footer"));
 
 function App() {
   return (
@@ -17,12 +19,16 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Projects />
-        <Timeline />
-        <About />
-        <Contact />
+        <Suspense>
+          <Projects />
+          <Timeline />
+          <About />
+          <Contact />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense>
+        <Footer />
+      </Suspense>
     </HeroProvider>
   );
 }

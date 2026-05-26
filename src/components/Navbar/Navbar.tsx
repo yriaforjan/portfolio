@@ -57,6 +57,8 @@ export default function Navbar() {
             src="/images/logo.webp"
             alt="Yria Forján logo"
             className="logoImage"
+            width={150}
+            height={80}
           />
         </button>
 

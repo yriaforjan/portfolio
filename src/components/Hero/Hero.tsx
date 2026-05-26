@@ -90,7 +90,7 @@ function CodeBlock({ onDone }: { onDone: () => void }) {
     }
     const t = setTimeout(
       () => setRevealed((n) => n + 1),
-      revealed === 0 ? 800 : 280 + Math.random() * 160,
+      revealed === 0 ? 550 : 190 + Math.random() * 100,
     );
     return () => clearTimeout(t);
   }, [revealed, done, onDone]);
@@ -115,7 +115,7 @@ function CodeBlock({ onDone }: { onDone: () => void }) {
       <div className="codeBody">
         {CODE.slice(0, revealed).map((line, i) => (
           <div key={i} className="codeLine">
-            <span className="lineNum">{String(i + 1).padStart(2, " ")}</span>
+            <span className="lineNum" aria-hidden="true">{String(i + 1).padStart(2, " ")}</span>
             <CodeLine text={line} />
           </div>
         ))}
