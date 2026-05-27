@@ -89,7 +89,9 @@ function CodeBlock({ onDone }: { onDone: () => void }) {
     }
     const t = setTimeout(
       () => setRevealed((n) => n + 1),
-      revealed === 0 ? 550 : 190 + Math.random() * 100,
+      revealed === 0
+        ? (window.innerWidth <= 768 ? 420 : 550)
+        : (window.innerWidth <= 768 ? 150 + Math.random() * 80 : 190 + Math.random() * 100),
     );
     return () => clearTimeout(t);
   }, [revealed, done, onDone]);
