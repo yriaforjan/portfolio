@@ -1,4 +1,20 @@
-import type { Project, TimelineEntry, Love, Social, SubEntry } from "../types";
+import type {
+  Project,
+  CareerEntry,
+  Love,
+  Social,
+  SubEntry,
+  Certification,
+} from "../types";
+import {
+  GiWaveSurfer,
+  GiGuitar,
+  GiCheeseWedge,
+  GiRunningShoe,
+} from "react-icons/gi";
+import { PiHairDryer } from "react-icons/pi";
+import { TbLegoFilled, TbTrafficCone, TbCoffeeOff } from "react-icons/tb";
+import { BsWifi1, BsBatteryLow } from "react-icons/bs";
 
 export const skills: string[] = [
   "HTML5",
@@ -20,7 +36,7 @@ export const skills: string[] = [
   "GitHub",
 ];
 
-export const timeline: TimelineEntry[] = [
+export const career: CareerEntry[] = [
   {
     year: "Presente",
     role: "Desarrolladora Full Stack en prácticas",
@@ -36,14 +52,6 @@ export const timeline: TimelineEntry[] = [
     type: "education",
     description:
       "Programa fullstack con enfoque práctico y proyectos reales. React, Next.js, Angular, TypeScript, Node.js, React Native, IONIC, bases de datos, cloud y testing.",
-  },
-  {
-    year: "2026",
-    role: "Microsoft Azure Fundamentals (AZ-900)",
-    entity: "Microsoft",
-    type: "cert",
-    description:
-      "Certificación oficial de Microsoft en fundamentos de computación en la nube con Azure.",
   },
   {
     year: "2024 – 2026",
@@ -179,19 +187,35 @@ export const projects: Project[] = [
 ];
 
 export const loves: Love[] = [
-  { name: "Perseguir olas y disfrutar del mar", emoji: "🏄🏼‍♀️" },
-  { name: "Quemar el asfalto para despejar la mente", emoji: "🏃🏼‍♀️" },
-  { name: "Construir obras maestras de LEGO", emoji: "🧱" },
-  { name: "Los clásicos del Rock que nunca mueren", emoji: "🎸" },
-  { name: "El queso", emoji: "🧀" },
+  { name: "Perseguir olas y disfrutar del mar", icon: GiWaveSurfer },
+  { name: "Quemar el asfalto para despejar la mente", icon: GiRunningShoe },
+  { name: "Construir obras maestras de LEGO", icon: TbLegoFilled },
+  { name: "Los clásicos del Rock que nunca mueren", icon: GiGuitar },
+  { name: "El queso", icon: GiCheeseWedge },
 ];
 
 export const hates: Love[] = [
-  { name: "El internet lento", emoji: "🛜" },
-  { name: "Los atascos eternos", emoji: "🚘" },
-  { name: "Quedarme sin café", emoji: "☕️" },
-  { name: "Batería a cero", emoji: "🔋" },
-  { name: "Un mal día de pelo", emoji: "💇🏼‍♀️" },
+  { name: "El internet lento", icon: BsWifi1 },
+  { name: "Los atascos eternos", icon: TbTrafficCone },
+  { name: "Quedarme sin café", icon: TbCoffeeOff },
+  { name: "Batería a cero", icon: BsBatteryLow },
+  { name: "Un mal día de pelo", icon: PiHairDryer },
+];
+
+export const certifications: Certification[] = [
+  {
+    name: "Microsoft Azure Fundamentals (AZ-900)",
+    badge:
+      "https://images.credly.com/size/340x340/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png",
+    url: "https://www.credly.com/badges/76a9516c-2c99-4465-99bf-241937ff31e5",
+  },
+  {
+    name: "Microsoft Azure AI Fundamentals (AI-901)",
+    badge:
+      "https://images.credly.com/size/340x340/images/4136ced8-75d5-4afb-8677-40b6236e2672/azure-ai-fundamentals-600x600.png",
+    url: "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/",
+    inProgress: true,
+  },
 ];
 
 export const socials: Social[] = [

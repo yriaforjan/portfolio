@@ -49,9 +49,11 @@ export default function About() {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.22, ease: "easeOut" }}
               >
-                {items.map(({ name, emoji }) => (
+                {items.map(({ name, icon: Icon }) => (
                   <li key={name} className="item">
-                    <span className="itemIcon">{emoji}</span>
+                    <span className="itemIcon">
+                      <Icon size={22} color="var(--purple)" />
+                    </span>
                     <span className="itemLabel">{name}</span>
                   </li>
                 ))}

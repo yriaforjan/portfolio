@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 const links = [
   { label: "Proyectos", id: "projects" },
-  { label: "Trayectoria", id: "timeline" },
+  { label: "Trayectoria", id: "career" },
   { label: "Sobre mí", id: "about" },
   { label: "Contacto", id: "contact" },
 ];

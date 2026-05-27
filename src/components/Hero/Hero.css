@@ -19,7 +19,6 @@
     gap: 32px;
   }
 
-  /* ── Code block ────────────────────────────────── */
   .heroReveal {
     opacity: 0;
     transition: opacity 0.9s ease-in-out;
@@ -83,7 +82,6 @@
     padding-top: 2px;
   }
 
-  /* Syntax tokens */
   .tok_keyword {
     color: var(--purple);
   }
@@ -108,7 +106,6 @@
     color: var(--text-muted);
   }
 
-  /* Blinking cursor */
   .cursor {
     display: inline-block;
     width: 2px;
@@ -119,7 +116,6 @@
     margin-left: 2px;
   }
 
-  /* ── CTA buttons ───────────────────────────────── */
   .ctaGroup {
     display: flex;
     gap: 16px;
@@ -166,7 +162,6 @@
     opacity: 0.6;
   }
 
-  /* ── Skills strip ──────────────────────────────── */
   .skillsSection {
     max-width: 1200px;
     margin: 0 auto;
@@ -178,7 +173,6 @@
     }
   }
 
-  /* ── Scroll hint ───────────────────────────────── */
   .scrollHint {
     position: absolute;
     right: clamp(24px, 6vw, 80px);

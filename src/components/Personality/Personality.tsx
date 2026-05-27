@@ -57,7 +57,7 @@ export default function Personality() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, ease, delay: i * 0.08 }}
             >
-              <span className="emoji">{love.emoji}</span>
+              <span className="emoji"><love.icon size={28} color="var(--purple)" /></span>
               <p className="label">{love.name}</p>
             </motion.div>
           ))}

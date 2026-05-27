@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { timeline } from "../../data/data";
-import "./Timeline.css";
+import { career, certifications } from "../../data/data";
+import "./Career.css";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
-export default function Timeline() {
+export default function Career() {
   const [open, setOpen] = useState<number | null>(null);
 
   const toggle = (i: number) => setOpen((prev) => (prev === i ? null : i));
 
   return (
-    <section id="timeline" className="timeline">
+    <section id="career" className="timeline">
       <div className="inner">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -20,13 +20,49 @@ export default function Timeline() {
           transition={{ duration: 0.6, ease }}
         >
           <span className="section-tag">Experiencia y Formación</span>
-          <h2 className="section-title">Mi trayectoria</h2>
         </motion.div>
 
+        {certifications.length > 0 && (
+          <motion.div
+            className="certsBlock"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease, delay: 0.1 }}
+          >
+            <h2 className="section-title">Certificaciones</h2>
+            <div className="certsList">
+              {certifications.map((cert) => (
+                <a
+                  key={cert.name}
+                  href={cert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`certLink${cert.inProgress ? " certInProgress" : ""}`}
+                  data-tooltip={
+                    cert.inProgress
+                      ? `${cert.name} — En preparación`
+                      : cert.name
+                  }
+                >
+                  <img
+                    src={cert.badge}
+                    alt={cert.name}
+                    className="certBadge"
+                    width={96}
+                    height={96}
+                  />
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+
+        <h2 className="section-title">Mi trayectoria</h2>
         <div className="track">
           <div className="line" />
 
-          {timeline.map((entry, i) => (
+          {career.map((entry, i) => (
             <motion.div
               key={i}
               className="item"

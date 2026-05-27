@@ -6,7 +6,7 @@ import { HeroProvider } from "./context/HeroContext";
 import "./App.css";
 
 const Projects = lazy(() => import("./components/Projects/Projects"));
-const Timeline = lazy(() => import("./components/Timeline/Timeline"));
+const Career = lazy(() => import("./components/Career/Career"));
 const About = lazy(() => import("./components/About/About"));
 const Contact = lazy(() => import("./components/Contact/Contact"));
 const Footer = lazy(() => import("./components/Footer/Footer"));
@@ -21,7 +21,7 @@ function App() {
         <Hero />
         <Suspense>
           <Projects />
-          <Timeline />
+          <Career />
           <About />
           <Contact />
         </Suspense>

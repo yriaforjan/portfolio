@@ -20,7 +20,6 @@
     grid-area: left;
   }
 
-  /* ── Left column ── */
   .left .section-title {
     margin-bottom: 60px;
   }
@@ -33,7 +32,6 @@
     max-width: 600px;
   }
 
-  /* ── Amo / Odio ── */
   .listWrapper {
     min-height: 200px;
     position: relative;
@@ -91,7 +89,6 @@
     line-height: 1.4;
   }
 
-  /* ── Photo ── */
   .photoWrapper {
     grid-area: photo;
     width: 300px;
@@ -122,7 +119,6 @@
   }
 }
 
-/* ── Tablet ── */
 @media (max-width: 900px) {
   .about {
     .grid {
@@ -166,7 +162,6 @@
   }
 }
 
-/* ── Mobile ── */
 @media (max-width: 580px) {
   .about {
     .grid {

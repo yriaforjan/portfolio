@@ -224,9 +224,11 @@ function SkillsStrip({ active }: { active: boolean }) {
           </ul>
         </div>
       </div>
+
     </div>
   );
 }
+
 
 export default function Hero() {
   const { ready, setReady } = useHero();

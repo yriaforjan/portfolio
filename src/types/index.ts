@@ -1,3 +1,5 @@
+import type React from "react";
+
 export interface Project {
   title: string;
   description: string;
@@ -14,7 +16,7 @@ export interface SubEntry {
   type: "education" | "work";
 }
 
-export interface TimelineEntry {
+export interface CareerEntry {
   year: string;
   role: string;
   entity: string;
@@ -25,10 +27,17 @@ export interface TimelineEntry {
 
 export interface Love {
   name: string;
-  emoji: string;
+  icon: React.ComponentType<{ size?: number; color?: string }>;
 }
 
 export interface Social {
   name: string;
   url: string;
+}
+
+export interface Certification {
+  name: string;
+  badge: string;
+  url: string;
+  inProgress?: boolean;
 }
