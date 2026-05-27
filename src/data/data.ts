@@ -205,14 +205,12 @@ export const hates: Love[] = [
 export const certifications: Certification[] = [
   {
     name: "Microsoft Azure Fundamentals (AZ-900)",
-    badge:
-      "https://images.credly.com/size/340x340/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png",
+    badge: "/images/badges/az-900.webp",
     url: "https://www.credly.com/badges/76a9516c-2c99-4465-99bf-241937ff31e5",
   },
   {
     name: "Microsoft Azure AI Fundamentals (AI-901)",
-    badge:
-      "https://images.credly.com/size/340x340/images/4136ced8-75d5-4afb-8677-40b6236e2672/azure-ai-fundamentals-600x600.png",
+    badge: "/images/badges/ai-900.webp",
     url: "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/",
     inProgress: true,
   },
