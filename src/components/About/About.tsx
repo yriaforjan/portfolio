@@ -65,6 +65,8 @@ export default function About() {
           <div className="photoWrapper">
             <img
               src="/images/avatar.webp"
+              srcSet="/images/avatar-sm.webp 300w, /images/avatar.webp 600w"
+              sizes="(max-width: 768px) 280px, 300px"
               alt="Yria Forján"
               className="photo"
               width={600}
