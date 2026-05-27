@@ -32,7 +32,7 @@ export const timeline: TimelineEntry[] = [
   {
     year: "2024 – Presente",
     role: "Curso de especialización universitaria en Desarrollo Web Full Stack",
-    entity: "thePower Business School",
+    entity: "UCAM - thePower Business School",
     type: "education",
     description:
       "Programa fullstack con enfoque práctico y proyectos reales. React, Next.js, Angular, TypeScript, Node.js, React Native, IONIC, bases de datos, cloud y testing.",
@@ -51,13 +51,13 @@ export const timeline: TimelineEntry[] = [
     entity: "thePower Business School",
     type: "education",
     description:
-      "Titulación oficial de Grado Superior en desarrollo web. Base técnica sólida en frontend, backend y bases de datos",
+      "Titulación oficial de Grado Superior en desarrollo web. Base técnica sólida en frontend, backend y bases de datos.",
   },
 
   {
     year: "2015 – 2025",
     role: "Etapa sanitaria",
-    entity: "Universidad de A Coruña · UPSA · SERGAS · Privado",
+    entity: "UDC · UPSA · SERGAS · Sanidad privada",
     type: "work",
     description:
       "Diez años entre formación universitaria y práctica clínica. Me enseñó a trabajar bajo presión, comunicar con claridad y resolver problemas donde no hay solución perfecta.",
@@ -65,7 +65,7 @@ export const timeline: TimelineEntry[] = [
       {
         year: "2021 – 2025",
         role: "Fisioterapeuta",
-        entity: "SERGAS y sector sanitario privado",
+        entity: "Servicio Gallego de Salud y sector sanitario privado",
         type: "work",
       },
       {

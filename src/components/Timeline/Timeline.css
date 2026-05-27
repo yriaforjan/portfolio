@@ -186,8 +186,8 @@
   .subYear {
     font-family: "Montserrat", sans-serif;
     font-size: 0.68rem;
-    font-weight: 600;
-    color: var(--text-muted);
+    font-weight: 500;
+    color: #7a7a7a;
     white-space: nowrap;
     padding-top: 2px;
     min-width: 90px;
@@ -212,14 +212,6 @@
   }
 }
 
-@media (max-width: 580px) {
-  .timeline {
-    .section-tag,
-    .section-title {
-      text-align: left;
-    }
-  }
-}
 
 @media (max-width: 480px) {
   .timeline {
