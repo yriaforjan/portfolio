@@ -7,6 +7,7 @@ export interface Project {
   image: string;
   github: string;
   link: string;
+  inProgress?: boolean;
 }
 
 export interface SubEntry {

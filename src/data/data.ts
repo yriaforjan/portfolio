@@ -38,17 +38,37 @@ export const skills: string[] = [
 
 export const career: CareerEntry[] = [
   {
-    year: "Presente",
-    role: "Desarrolladora Full Stack en prácticas",
+    year: "2026 – Presente",
+    role: "Full Stack Developer",
     entity: "Bahia Software",
     type: "work",
-    description:
-      "Desarrollo web full stack en proyectos reales de clientes: Vue 3, TypeScript, Java, Spring Boot, Oracle. Aprendizaje acelerado en un entorno profesional ágil y colaborativo.",
+    subEntries: [
+      {
+        year: "Jun 2026 – Presente",
+        role: "Programadora Junior",
+        entity: "Remoto",
+        type: "work",
+      },
+      {
+        year: "Mar 2026 – Jun 2026",
+        role: "Desarrolladora Full Stack en prácticas",
+        entity: "Remoto",
+        type: "work",
+      },
+    ] satisfies SubEntry[],
   },
   {
-    year: "2024 – Presente",
+    year: " Jul 2026 – Presente",
+    role: "Programa AI Engineer",
+    entity: "ThePower Tech School",
+    type: "education",
+    description:
+      "Formación especializada en inteligencia artificial aplicada al desarrollo de software: modelos de lenguaje, agentes, RAG, APIs de IA y herramientas del ecosistema actual.",
+  },
+  {
+    year: "2024 – 2026",
     role: "Curso de especialización universitaria en Desarrollo Web Full Stack",
-    entity: "UCAM - thePower Business School",
+    entity: "UCAM - ThePower Tech School",
     type: "education",
     description:
       "Programa fullstack con enfoque práctico y proyectos reales. React, Next.js, Angular, TypeScript, Node.js, React Native, IONIC, bases de datos, cloud y testing.",
@@ -56,7 +76,7 @@ export const career: CareerEntry[] = [
   {
     year: "2024 – 2026",
     role: "Grado Superior en Desarrollo de Aplicaciones Web (DAW)",
-    entity: "thePower Business School",
+    entity: "ThePower Tech School",
     type: "education",
     description:
       "Titulación oficial de Grado Superior en desarrollo web. Base técnica sólida en frontend, backend y bases de datos.",
@@ -93,6 +113,27 @@ export const career: CareerEntry[] = [
 ];
 
 export const projects: Project[] = [
+  {
+    title: "Snapclash",
+    description:
+      "App de retos fotográficos diarios con jurado de IA. El sistema evalúa cada foto por velocidad, similitud al tema y originalidad. Grupos privados, leaderboard, feed social y PWA con notificaciones push.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "PWA",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Cloudinary",
+      "Groq AI",
+    ],
+    image: "/images/projects/snapclash.webp",
+    github: "",
+    link: "",
+    inProgress: true,
+  },
   {
     title: "Garage Manager",
     description:
